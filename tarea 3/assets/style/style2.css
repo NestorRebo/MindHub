@@ -13,11 +13,6 @@ nav{
     background-repeat: no-repeat;
         
 }
-a{
-    position: relative;
-    left: 78vh;
-    top: -2vh;
-}
 
 h1{    
     font-size: xx-large;
@@ -53,7 +48,7 @@ h3{
 #logo{
     width: 10%;
     position: absolute;
-    top: 49vh;
+    top: 52vh;
 
 }
 
@@ -64,6 +59,9 @@ h3{
     background-color: rgb(11, 112, 179);
     padding: 1px 10px;
     border: 1pt solid black;
+    position: relative;
+    left: 74%;
+    top: -2vh;
 }
 
 nav .active{
