@@ -24,17 +24,22 @@ h4{
     font-size: medium;
     position: relative;
     top: 1vh;
-    left: 15vh;
+    /* left: 15vh; */
+    margin-left: 23vh;
 }
 
 p{
-   
+    
     font-size: small;
     position: relative;
     top: 1vh;
-    left: 18vh;
+    /* left: 18vh; */
+    margin-left: 26vh;
+    margin-right: 5vh;
+    text-indent: 10px;
 }
 a{
+    padding-right: 5vh;
     font-size: small;
 }
 
@@ -46,9 +51,9 @@ h3{
 }
 
 #logo{
-    width: 10%;
+    width: 15vh;
     position: absolute;
-    top: 52vh;
+    top: 50vh;
 
 }
 
@@ -60,7 +65,7 @@ h3{
     padding: 1px 10px;
     border: 1pt solid black;
     position: relative;
-    left: 74%;
+    left: 70%;
     top: -2vh;
 }
 
