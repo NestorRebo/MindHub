@@ -6,12 +6,13 @@
  }
 
 nav{
+    position: relative;
     width: 100%;
     height: 40vh;
     background-image: url(../images/design1_image2.jpg);
     background-size:auto;
     background-repeat: no-repeat;
-        
+     
 }
 
 h1{    
@@ -19,30 +20,39 @@ h1{
 }
 
 h4{   
+   
     font-weight: bold;
     font-style: italic;
     font-size: medium;
     position: relative;
-    top: 1vh;
-    left: 19vh;
+    top: 3vh;
+    /* left: 19vh; */
+    margin-top: 1vh;
     
 }
 
 p{
+    
     font-size: small;
     position: relative;
-    top: 1vh;
-    left: 20vh;
-    
+    top: 3vh;
     text-indent: 10px;
     margin-top: 1vh;
+    /* left: 4vw; */
+
 }
+
+section{
+    position: absolute;
+    left: 20vh;
+}
+
 a{
-    padding-right: 5vh;
     font-size: small;
 }
 
 h3{
+    position: relative;
     color: black;
     border: 1pt solid black; /* Grosor y estilo del borde */
     padding: 1px; /* Espacio dentro del recuadro */
@@ -50,22 +60,24 @@ h3{
 }
 
 #logo{
-    width: 15vh;
     position: absolute;
+    width: 15vh;    
     top: 50vh;
 
 }
 
 
 .celeste {
+    
     text-decoration: none;
     color: white;
     background-color: rgb(11, 112, 179);
     padding: 1px 10px;
     border: 1pt solid black;
     position: relative;
-    left: 70%;
-    top: -2vh;
+    left: 73%;
+    bottom: 2vh;
+    
 }
 
 nav .active{
