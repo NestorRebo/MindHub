@@ -68,14 +68,15 @@ h3{
 
 
 .celeste {
-    
+    display: inline-block;
     text-decoration: none;
     color: white;
     background-color: rgb(11, 112, 179);
     padding: 1px 10px;
     border: 1pt solid black;
     position: relative;
-    left: 73%;
+    /* left: 73%; */
+    left: 80%;
     bottom: 2vh;
     
 }
