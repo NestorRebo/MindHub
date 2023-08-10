@@ -91,17 +91,36 @@ h4{
     text-align: center;
 }
 
-.mainRules{
-    padding-left:4vw;
-    padding-right: 4vw;
+/* .mainRules{
+    padding: 0 1vh 0 1vh;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+
 }
 
+.mainRules1{
+    
+    padding: 0 1vh 0 1vh;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}   NO LO PUDE CENTRAR PARA QUE QUERE MAS BONITO A TIEMPO */
 
 ol{
     font-size: small;
     padding-left: 1vw;
+    
+    
 }
+
 ol>ol{
+
     list-style-type: lower-alpha;
 }
 
@@ -112,20 +131,25 @@ li{
 }
 
 
-/* ul{
+ul{
     font-size: small;
-    padding-left: 2vw;
-    background-color: blueviolet;
-} */
+    padding-left: 5vw;
+    /* background-color: blueviolet;  */
+}
+
+.sectionIzq{
+    display: flex;
+    flex-direction: column;
+}
+
+
 
 p {
     text-indent: 35px;
     font-size: small;
 }
 
-dd{
-    font-size: small;
-}
+
 
 caption{
     caption-side: top;
@@ -134,28 +158,30 @@ caption{
 }
 
 .cursiva{
+    display: flex;
     
     font-style: italic;
 }
 
 table, tr, th, td{
     justify-content: center;
-    align-items: center;
     padding: 10px;
     font-size: small;
-
-
-}
-
-
-article{
-    display: flex;
     
 }
 
+/* 
+article{
+    display: flex;
+    
+    
+    
+
+} */
+
 .artEspaciado{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .sinSangria{
@@ -163,5 +189,11 @@ article{
 }
 
 .saltoPag{
-    padding-top: 2vh;
+    padding-top: 3vh;
+}
+
+.h1izquierd{
+    display: flex;
+    justify-content:flex-end;
+    padding-bottom: 10px;
 }
