@@ -91,8 +91,9 @@ h4{
     text-align: center;
 }
 
-/* .mainRules{
-    padding: 0 1vh 0 1vh;
+.mainRules{
+    padding-left: 5vh;
+    padding-right: 5vh;
     background-color: aqua;
     display: flex;
     flex-direction: column;
@@ -104,7 +105,7 @@ h4{
 .mainRules1{
     
     padding: 0 1vh 0 1vh;
-    background-color: aqua;
+    /* background-color: aqua; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -135,6 +136,7 @@ ul{
     font-size: small;
     padding-left: 5vw;
     /* background-color: blueviolet;  */
+    list-style-type: circle;
 }
 
 .sectionIzq{
@@ -158,30 +160,27 @@ caption{
 }
 
 .cursiva{
-    display: flex;
-    
+    /* display: flex; */
     font-style: italic;
 }
 
 table, tr, th, td{
     justify-content: center;
-    padding: 10px;
+    padding: 5px;
     font-size: small;
+    
     
 }
 
 /* 
 article{
     display: flex;
-    
-    
-    
-
 } */
 
 .artEspaciado{
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .sinSangria{
