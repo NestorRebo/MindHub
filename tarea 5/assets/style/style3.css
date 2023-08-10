@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    padding: 0; 
+    box-sizing: content-box;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+ }
+
+nav{
+    display: flex;
+    justify-content: end;
+    height: 40vh;
+    background-image: url(../images/design1_image2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: small;
+    
+    
+}
+
+nav .active{
+    background-color: green;
+}
+
+.celeste {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(11, 112, 179);
+    padding: 1px 10px;
+    border: 1pt solid black;
+    height: 18px;
+    transform: translateY(-0.5rem); /*revisar*/   
+}
+
+
+h1{    
+    font-size: xx-large;
+}
+
+h3{
+    display: flex;
+    justify-content: center;
+    color: black;
+    border: 1pt solid black; /* Grosor y estilo del borde */
+    padding: 1px; /*Espacio dentro del recuadro*/
+    align-self: center;
+    
+}
+
+h4{   
+    font-weight: bold;
+    font-style: italic;
+    font-size: medium;    
+}
+
+.sangria{
+    font-size: small;
+    text-indent: 20px;
+}
+
+
+#logo{
+    width: 15vh;  
+}
+
+.container{
+    display: flex;
+    /* background-color: rgb(30, 255, 244); */
+
+}
+
+
+.caja1 {
+    flex-grow: 1;
+    flex-wrap: wrap;
+    /* background-color: rgb(30, 255, 105); */
+}
+
+.caja2 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 30;
+    flex-wrap: wrap;
+    /* background-color: rgb(173, 30, 255);  */
+    padding: 20px;
+    gap: 2px;
+}
+
+.rules {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.mainRules{
+    padding-left: 5vh;
+    padding-right: 5vh;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+
+}
+
+.mainRules1{
+    
+    padding: 0 1vh 0 1vh;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}   NO LO PUDE CENTRAR PARA QUE QUERE MAS BONITO A TIEMPO */
+
+ol{
+    font-size: small;
+    padding-left: 1vw;
+    text-indent: 0px;
+    
+}
+
+ol>ol{
+
+    list-style-type: lower-alpha;
+}
+
+
+
+li{
+    text-indent: 0px;
+    font-size: small;
+}
+
+
+ul{
+    font-size: small;
+    padding-left: 5vw;
+    /* background-color: blueviolet;  */
+    list-style-type: circle;
+}
+
+.sectionIzq{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+p {
+    text-indent: 35px;
+    font-size: small;
+}
+
+
+
+caption{
+    caption-side: top;
+    text-align: left;
+    
+}
+
+.cursiva{
+    /* display: flex; */
+    font-style: italic;
+}
+
+table, tr, th, td{
+    justify-content: center;
+    padding: 5px;
+    font-size: small;
+    
+    
+}
+
+/* 
+article{
+    display: flex;
+} */
+
+.rules{
+    display: flex;
+    text-align: center;
+}
+
+.artEspaciado{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.sinSangria{
+    text-indent: 0px;
+}
+
+.saltoPag{
+    padding-top: 3vh;
+}
+
+.h1izquierd{
+    display: flex;
+    justify-content:flex-end;
+    padding-bottom: 10px;
+}
