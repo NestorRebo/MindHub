@@ -9,7 +9,7 @@
     <title>Registration Form</title>
 </head>
 
-<body>
+<body class="bodyRegForm">
     <header>
         <h1>Mighty Ducks Hockey League</h1>
     </header>
@@ -27,64 +27,78 @@
 
         <form action="./show_data.html" method="get">
 
+            <h3>Form:</h3>
+
             <div class="sectionform">
 
 
 
-                <fieldset>
-                    <label for="nombre">Player's First Name:</label>
-                    <input type="text" id="nombre" name="nombre" value="">
-                    <label for="apellido">Last Name:</label>
-                    <input type="text" id="apellido" name="apellido" value="">
+                <fieldset class="evely">
+                    <div>
+                        <label for="nombre">Player's First Name:</label>
+                        <input type="text" id="nombre" name="nombre" value="" placeholder="Name">
+                    </div>
+                    <div>
+                        <label for="apellido">Last Name:</label>
+                        <input type="text" id="apellido" name="apellido" value="" placeholder="Last Name">
+                    </div>
                 </fieldset>
 
-                <fieldset>
-                    <label for="direccion">Street Address:</label>
-                    <input type="text" id="direccion" name="direccion" value="">
+                <fieldset class="evely">
+                    <div>
+                        <label for="direccion">Street Address:</label>
+                    </div>
+                    <div>
+                        <input type="text" id="direccion" name="direccion" value="" placeholder="Address" class=>
+                    </div>
                 </fieldset>
 
-                <fieldset>
-
-                    <label for="ciudad">City:</label>
-                    <!-- <input list="ciudad" id="ciudad" name="datosPersonales"> -->
-                    <select id="ciudad">
-                        <option value="buenosaires">Buenos Aires</option>
-                        <option value="neuquen">Neuquén</option>
-                        <option value="rosario">Rosario</option>
-                        <option value="riocolorado">Río Colorado</option>
-                    </select>
-
-                    <label for="codigoPostal">Zip Code:</label>
-                    <input type="text" id="codigoPostal" name="Codigo Postal" value="">
+                <fieldset class="evely">
+                    <div>
+                        <label for="ciudad">City:</label>
+                        <!-- <input list="ciudad" id="ciudad" name="datosPersonales"> -->
+                        <select id="ciudad">
+                            <option value="buenosaires">Buenos Aires</option>
+                            <option value="neuquen">Neuquén</option>
+                            <option value="rosario">Rosario</option>
+                            <option value="riocolorado">Río Colorado</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="codigoPostal">Zip Code:</label>
+                        <input type="text" id="codigoPostal" name="Codigo Postal" value="" placeholder="Zip Code">
+                    </div>
                 </fieldset>
 
-                <fieldset>
-                    <label for="fechaNac">Birth Date(mm/dd/yyyy):</label>
-                    <input type="date" id="fechaNac" name="Birth Date" value="">
+                <fieldset class="evely">
+                    <div>
+                        <label for="fechaNac">Birth Date(mm/dd/yyyy):</label>
+                        <input type="date" id="fechaNac" name="Birth Date" value="">
+                    </div>
+                    <div>
+                        <label class="negrita">Gender:</label>
+                        <input type="radio" name="Gender" id="female" value="female">
+                        <label for="female">Female</label>
 
-
-                    <label>Gender:</label>
-                    <input type="checkbox" name="Gender" id="female" value="female">
-                    <label for="female">Female</label>
-
-                    <label for="male">Male</label>
-                    <input type="checkbox" name="Gender " id="male" value="male">
+                        <label for="male">Male</label>
+                        <input type="radio" name="Gender " id="male" value="male">
+                    </div>
                 </fieldset>
 
                 <fieldset>
                     <label>Grade: </label>
 
-                    <input type="checkbox" name="Grade" id="preSchool" value="preSchool">
+                    <input type="radio" name="Grade" id="preSchool" value="preSchool">
                     <label for="preSchool">Pre-School</label>
-                    <input type="checkbox" name="Grade" id="first" value="1st">
+                    <input type="radio" name="Grade" id="first" value="1st">
                     <label for="first">1st</label>
-                    <input type="checkbox" name="Grade" id="second" value="2nd">
+                    <input type="radio" name="Grade" id="second" value="2nd">
                     <label for="second">2nd</label>
-                    <input type="checkbox" name="Grade" id="third" value="3rd">
+                    <input type="radio" name="Grade" id="third" value="3rd">
                     <label for="third">3rd</label>
-                    <input type="checkbox" name="Grade" id="fourth" value="4th">
+                    <input type="radio" name="Grade" id="fourth" value="4th">
                     <label for="fourth">4th</label>
-                    <input type="checkbox" name="Grade" id="fifth" value="5th">
+                    <input type="radio" name="Grade" id="fifth" value="5th">
                     <label for="fifth">5th</label>
 
                 </fieldset>
@@ -102,7 +116,7 @@
                         <option value="North Elementary">North Elementary</option>
                         <option value="Howard A Yeager">Howard A Yeager</option>
                         <option value="South Elementary">South Elementary</option>
-                      </select>
+                    </select>
 
                     <!-- <input type="checkbox" name="school" id="AJ" value="AJ">
                     <label for="AJ">AJ Katzenmaier</label>
@@ -122,32 +136,32 @@
                 <fieldset>
                     <h4>What position(s) do you normally play?(check all that apply)</h4>
 
-                    <input type="checkbox" name="position" id="forward" value="forward">
+                    <input type="radio" name="position" id="forward" value="forward">
                     <label for="forward">Forward</label>
-                    <input type="checkbox" name="position" id="midfield" value="midfield">
+                    <input type="radio" name="position" id="midfield" value="midfield">
                     <label for="midfield">Midfield</label>
-                    <input type="checkbox" name="position" id="defense" value="defense">
+                    <input type="radio" name="position" id="defense" value="defense">
                     <label for="defense">Defense</label>
-                    <input type="checkbox" name="position" id="goalkeeper" value="goalkeeper">
+                    <input type="radio" name="position" id="goalkeeper" value="goalkeeper">
                     <label for="goalkeeper">Goalkeeper</label>
                 </fieldset>
 
                 <fieldset>
                     <h4>Uniform Size:</h4>
 
-                    <input type="checkbox" name="uSize" id="youthSmal" value="youthSmal">
+                    <input type="radio" name="uSize" id="youthSmal" value="youthSmal">
                     <label for="youthSmal">Youth Smal</label>
-                    <input type="checkbox" name="uSize" id="youthMedium" value="youthMedium">
+                    <input type="radio" name="uSize" id="youthMedium" value="youthMedium">
                     <label for="youthMedium">Youth Medium</label>
-                    <input type="checkbox" name="uSize" id="youthLarge" value="youthLarge">
+                    <input type="radio" name="uSize" id="youthLarge" value="youthLarge">
                     <label for="youthLarge">Youth Large</label>
-                    <input type="checkbox" name="uSize" id="small" value="small">
+                    <input type="radio" name="uSize" id="small" value="small">
                     <label for="small">Small</label>
-                    <input type="checkbox" name="uSize" id="medium" value="medium">
+                    <input type="radio" name="uSize" id="medium" value="medium">
                     <label for="medium">Medium</label>
-                    <input type="checkbox" name="uSize" id="large" value="large">
+                    <input type="radio" name="uSize" id="large" value="large">
                     <label for="large">Large</label>
-                    <input type="checkbox" name="uSize" id="extraLarge" value="extraLarge">
+                    <input type="radio" name="uSize" id="extraLarge" value="extraLarge">
                     <label for="extraLarge">Extra-Large</label>
 
                 </fieldset>
@@ -155,7 +169,7 @@
 
 
 
-                <article>
+                <section class="permission">
                     <h4>
                         Permission to Play
                     </h4>
@@ -177,18 +191,18 @@
                     </p>
 
 
-                </article>
+                </section>
 
 
 
 
-                <fieldset>
+                <fieldset class="approved">
                     <input type="checkbox" name="Aprobado" id="approved" value="approved">
                     <label for="approved">Approved</label>
 
                     <div>
                         <label for="firma">Paren/Guardian Signature:</label>
-                        <input type="text" id="firma" name="Nombre del Firmante">
+                        <input type="text" id="firma" name="Nombre del Firmante" placeholder="Signature">
                     </div>
 
                     <div>
