@@ -202,3 +202,52 @@ article{
     justify-content:flex-end;
     padding-bottom: 10px;
 }
+
+.maps{
+    width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 10px;
+    margin: 10px;
+}
+
+iframe, .h5map{
+    padding: 10px;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.mainRegForm {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center;
+    flex-direction: column; */
+    padding: 20px;
+}
+
+/* fieldset{
+    display: flex;
+    padding: 5px;
+    
+} */
+
+.sectionform{
+ display: flex;
+ flex-direction: column;
+ align-items: space-around;
+}
+
+input[type=text] {
+    padding: px;
+    border: none;
+    /* border-bottom: 2px solid rgb(0, 0, 0); */
+    background-color: #d6e2de;
+    color: rgb(29, 28, 28);
+  }
+
+label, input {
+    font-size: small;
+}
+
