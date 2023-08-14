@@ -269,7 +269,7 @@ label, input {
 }
 
 
-@media only screen and (min-whidth: 575px) and (max-whidth: 810px){
+@media only screen and (min-whidth: 600px) and (max-whidth: 810px){
 
     /* nav{
         display: flex;
@@ -288,7 +288,15 @@ label, input {
        display: flex;
 
     } */
-
+    .celeste {
+        text-decoration: none;
+        color: white;
+        background-color: rgb(11, 112, 179);
+        padding: 1px 10px;
+        border: 1pt solid black;
+        height: 18px;
+        transform: none; /*revisar*/
+    }
     .mainRegForm {
         display: flex;
         flex-wrap: wrap;
@@ -336,7 +344,7 @@ label, input {
 
 }
 
-@media only screen and (min-whidth: 320px) and (max-whidth: 575px){
+@media only screen and (min-whidth: 320px) and (max-whidth: 600px){
     /* .mainRegForm {
        display: flex;
     flex-direction: row;
@@ -352,7 +360,7 @@ label, input {
         font-size: small;
         flex-wrap: wrap;
         align-content: flex-start;
-
+        transform: none;
     }
 
 
