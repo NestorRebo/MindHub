@@ -1,11 +1,11 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: content-box;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
- }
+}
 
-nav{
+nav {
     display: flex;
     justify-content: end;
     height: 40vh;
@@ -17,7 +17,7 @@ nav{
 
 }
 
-nav .active{
+nav .active {
     background-color: green;
 }
 
@@ -28,44 +28,49 @@ nav .active{
     padding: 1px 10px;
     border: 1pt solid black;
     height: 18px;
-    transform: translateY(-0.5rem); /*revisar*/
+    transform: translateY(-0.5rem);
+    /*revisar*/
 }
 
 
-h1{
+h1 {
     font-size: xx-large;
 }
-h2{
+
+h2 {
     padding: 20px;
 }
-h3{
+
+h3 {
     display: flex;
     flex-direction: row;
     justify-content: center;
     color: black;
-    border: 1pt solid black; /* Grosor y estilo del borde */
-    padding: 1px; /*Espacio dentro del recuadro*/
+    border: 1pt solid black;
+    /* Grosor y estilo del borde */
+    padding: 1px;
+    /*Espacio dentro del recuadro*/
     /* align-self: center; */
 
 }
 
-h4{
+h4 {
     font-weight: bold;
     font-style: italic;
     font-size: medium;
 }
 
-.sangria{
+.sangria {
     font-size: small;
     text-indent: 20px;
 }
 
 
-#logo{
+#logo {
     width: 15vh;
 }
 
-.container{
+.container {
     display: flex;
     /* background-color: rgb(30, 255, 244); */
 
@@ -94,7 +99,7 @@ h4{
     text-align: center;
 }
 
-.mainRules{
+.mainRules {
     padding-left: 5vh;
     padding-right: 5vh;
     /* background-color: aqua; */
@@ -105,7 +110,7 @@ h4{
 
 }
 
-.mainRules1{
+.mainRules1 {
     /* width: 800px; */
     padding: 0 1vh 0 1vh;
     /* background-color: aqua; */
@@ -114,41 +119,42 @@ h4{
     justify-content: center;
     align-items: center;
 
-}   /*NO LO PUDE CENTRAR PARA QUE QUERE MAS BONITO A TIEMPO */
+}
 
-ol{
+/*NO LO PUDE CENTRAR PARA QUE QUERE MAS BONITO A TIEMPO */
+
+ol {
     font-size: small;
     padding-left: 1vw;
     text-indent: 0px
-
 }
 
-ol>ol{
+ol>ol {
     font-size: small;
     list-style-type: lower-alpha;
 }
 
 
 
-li{
+li {
 
     text-indent: 0px;
 
 }
 
-.letraChica{
+.letraChica {
     font-size: small;
 }
 
 
-ul{
+ul {
     font-size: small;
     padding-left: 5vw;
     /* background-color: blueviolet;  */
     list-style-type: circle;
 }
 
-.sectionIzq{
+.sectionIzq {
     display: flex;
     flex-direction: column;
 }
@@ -162,18 +168,21 @@ p {
 
 
 
-caption{
+caption {
     caption-side: top;
     text-align: left;
 
 }
 
-.cursiva{
+.cursiva {
     /* display: flex; */
     font-style: italic;
 }
 
-table, tr, th, td{
+table,
+tr,
+th,
+td {
     justify-content: center;
     padding: 5px;
     font-size: small;
@@ -184,33 +193,33 @@ table, tr, th, td{
 
 
 
-.rules{
+.rules {
     display: flex;
     text-align: center;
 }
 
-.artEspaciado{
+.artEspaciado {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
-.sinSangria{
+.sinSangria {
     text-indent: 0px;
 }
 
-.saltoPag{
+.saltoPag {
     padding-top: 3vh;
 }
 
-.h1izquierd{
+.h1izquierd {
     display: flex;
-    justify-content:flex-end;
+    justify-content: flex-end;
     padding-bottom: 10px;
 }
 
-.maps{
-    width: 800px;
+.maps {
+    
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -219,7 +228,8 @@ table, tr, th, td{
     margin: 10px;
 }
 
-iframe, .h5map{
+iframe,
+.h5map {
     padding: 10px;
     border: 1px solid rgb(0, 0, 0);
 }
@@ -229,24 +239,23 @@ iframe, .h5map{
 
 .mainRegForm {
     display: flex;
-
     flex-wrap: wrap;
     padding: 20px;
 
 
 }
-fieldset{
+
+fieldset {
     display: flex;
     padding: 10px;
     gap: 23px
-
 }
 
-.permission{
+.permission {
     padding: 10px;
 }
 
-.approved{
+.approved {
     display: flex;
     gap: 20px;
     justify-content: center;
@@ -258,112 +267,108 @@ input[type=text] {
     border-bottom: 1px solid rgb(182, 73, 5);
     background-color: #aeaeae;
     color: rgb(29, 28, 28);
-  }
+}
 
-label, input {
+label,
+input {
     font-size: small;
 }
-.evely{
+
+.evely {
     display: flex;
     justify-content: space-evenly
 }
 
-
-@media only screen and (min-whidth: 600px) and (max-whidth: 810px){
-
-    /* nav{
-        display: flex;
-        justify-content: end;
-        height: 40vh;
-        background-image: url(../images/design1_image2.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        font-size: small;
+@media only screen and (min-width: 850px) and (max-width:1669px){
+    .maps {
+        /* display: flex;
         flex-wrap: wrap;
-        align-content: flex-start;
+        justify-content: space-around;
+        border: 1px solid rgb(0, 0, 0);
+        padding: 10px;
+        margin: 10px; */
+        width: 800px;
 
-    } */
 
-    /* .mainRegForm {
-       display: flex;
+    }
 
-    } */
+}
+
+
+@media only screen and (min-width:768px) and (max-width:850px) {
+
     .celeste {
-        text-decoration: none;
+        /* text-decoration: none;
         color: white;
         background-color: rgb(11, 112, 179);
         padding: 1px 10px;
         border: 1pt solid black;
         height: 18px;
-        transform: none; /*revisar*/
-    }
-    .mainRegForm {
-        display: flex;
-        flex-wrap: wrap;
-        padding: 20px;
-
+        transform: translateY(-0.5rem);
+        revisar */
+        transform: (0rem);
+        height: 20px;
 
     }
 
-    fieldset{
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        padding: 10px;
-
-
-    }
-    .permission{
-        display: flex;
-        padding: 10px;
-    }
-
-
-    .mainRules1{
-
-        padding: 0 1vh 0 1vh;
-        /* background-color: aqua; */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-    }
-
-    .maps{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        justify-content: space-between;
-
-        border: 1px solid rgb(0, 0, 0);
-        padding: 10px;
-
-    }
-
-
-
-}
-
-@media only screen and (min-whidth: 320px) and (max-whidth: 600px){
-    /* .mainRegForm {
-       display: flex;
-    flex-direction: row;
-    } */
-
-    nav{
-        display: flex;
+    nav {
+        /* display: flex;
         justify-content: end;
         height: 40vh;
         background-image: url(../images/design1_image2.jpg);
         background-size: cover;
         background-repeat: no-repeat;
-        font-size: small;
-        flex-wrap: wrap;
-        align-content: flex-start;
-        transform: none;
+        font-size: small; */
+        
+    
     }
+
+
+
+
+    .permission {
+        display: flex;
+        padding: 10px;
+    }
+
+
+
 
 
 
 }
 
+@media only screen and (min-width:320px) and (max-width:767px) {
+    .mainRegForm {
+        /* display: flex;
+        flex-wrap: wrap;
+        padding: 20px; */
+        flex-direction: row;
+
+    }
+
+
+    fieldset {
+        /* display: flex;
+        padding: 10px;
+        gap: 23px */
+        flex-wrap: wrap;
+    }
+
+    nav {
+        /* display: flex;
+        justify-content: end;
+        height: 40vh;
+        background-image: url(../images/design1_image2.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-size: small; */
+        flex-wrap: wrap;
+        align-content: flex-start;
+
+    }
+
+
+
+
+}
