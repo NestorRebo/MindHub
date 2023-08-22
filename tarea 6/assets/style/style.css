@@ -3,6 +3,10 @@
 } */
 
 body{
-    background-color: rgba(145, 142, 142, 0.39) !important;
+    background-color: rgba(100, 99, 99, 0.39) !important;
 }
-
+ 
+/* *{
+    --bs-gutter-x: 0rem !important;
+    outline: 1px solid red;
+} */
