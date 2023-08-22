@@ -10,3 +10,8 @@ body{
     --bs-gutter-x: 0rem !important;
     outline: 1px solid red;
 } */
+
+.carouselImg {
+    height: 350px;
+    object-fit: cover;
+}
