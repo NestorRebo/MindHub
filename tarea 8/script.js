@@ -1,8 +1,7 @@
 let fechaActual = data.currentDate;
 let dataEventos = data.events;
 let ubicacion = document.getElementById("cards")
-// let ubicacion1 = document.getElementById("cardsPast")
-// let ubicacion2 = document.getElementById("cardsNext")
+
 
 /* -----------------------------generar tarjetas---------------------------------------- */
 
@@ -51,24 +50,22 @@ function generarTarjetas(dataEventos, ubic) {
 
 // generacion de nuevos  arrys con la condicion que queremos
 
-/* let dataEventosNext = dataEventos.filter(dataEventos => dataEventos.date > fechaActual)
-let dataEventosPast = dataEventos.filter(dataEventos => dataEventos.date < fechaActual)
-
-if (document.title === "Upcoming Events") {
-  generarTarjetas(dataEventosNext, cardsNext)
-
-} else if (document.title === "Past Events") {
-  generarTarjetas(dataEventosPast, cardsPast)
-} else if (document.title === "Amazing Events") {
-  generarTarjetas(dataEventos, cards)
-} */
-
-
-
 function impresionDeCards(elementosFiltrados) {
 
   let dataEventosNext = elementosFiltrados.filter(elementosFiltrados => elementosFiltrados.date > fechaActual)
   let dataEventosPast = elementosFiltrados.filter(elementosFiltrados => elementosFiltrados.date < fechaActual)
+
+console.log(dataEventosPast)
+
+  if(dataEventosNext.length == 0){
+    dataEventosNext = advertencia()
+  }
+  if(dataEventosPast.length == 0){
+    dataEventosPast = advertencia()
+  }
+  if(elementosFiltrados.length == 0){
+    elementosFiltrados = advertencia ()
+  }
 
 
   switch (document.title) {
@@ -145,11 +142,11 @@ if (document.title != "Details") {
 
     let objetoFiltrado = dataEventos.filter(objeto => idElementoFiltrado.includes(objeto._id))
 
-    if (inputTexto.length == 0) {
-      return dataEventos
-    } else {
+    // if (inputTexto.length == 0) {
+    //   // return dataEventos
+    // } else {
       return objetoFiltrado
-    }
+    // }
 
   }
 
@@ -185,24 +182,28 @@ if (document.title != "Details") {
 
   crearCheckboxes(dataEventos, checkboxes)
 
+function advertencia(){
+  let advertencia = [{
+    name: "no se ha encontrado resultado",
+    image: "https://friconix.com/jpg/fi-cnluxx-magnifying-glass-cross.jpg",
+    description: "",
+    price: "",
+
+  }]
+  return advertencia
+}
+
   function filtroCruzado() {
     let filtradoPorTexto = filtrarPorTexto(dataEventos, inputTexto.value)
     let filtrarPorTextoYPorCheckers = filtrarPorCheck(filtradoPorTexto)
-    if (filtrarPorTextoYPorCheckers.length === 0 && inputTexto.length !== 0) {
-      let advertencia = [{
-        name: "no se ha encontrado resultado",
-        image: "https://friconix.com/jpg/fi-cnluxx-magnifying-glass-cross.jpg",
-      }]
-      impresionDeCards(advertencia)
-    } else if (filtrarPorTextoYPorCheckers.length === 0) {
-      impresionDeCards(dataEventos)
-    } else {
-      impresionDeCards(filtrarPorTextoYPorCheckers)
-    }
+
+    impresionDeCards(filtrarPorTextoYPorCheckers)
+  
   }
 
 
   /* detectamos si hubo un cambio en los checkboxes */
+
   // checkboxes.addEventListener("change", () => {
   // //  console.log("cambio un checkbox")
   //   //  let arregloFiltradoPorCheck = filtrarPorCheck(dataEventos)
@@ -236,16 +237,16 @@ if (document.title != "Details") {
   /* ---------------------------------DETAILS--------------------------------------- */
 
   const queryString = location.search;
-  console.log(queryString)
+  // console.log(queryString)
   const param = new URLSearchParams(queryString);
-  console.log(param);
+  // console.log(param);
   const id = param.get("id");
   const idplus = id.trim()
-  console.log(idplus)
+  // console.log(idplus)
 
   let elementoFiltrado = dataEventos.filter(obj => Object.values(obj).some(value => value == idplus))
   let elementoFiltrado1 = elementoFiltrado[0]
-  console.log(elementoFiltrado1)
+  // console.log(elementoFiltrado1)
   pintarDetails(elementoFiltrado1)
 }
 
@@ -311,5 +312,3 @@ function pintarDetails(elementoAMostrar) {
 
   details.innerHTML = cardHTML
 }
-
-  // 

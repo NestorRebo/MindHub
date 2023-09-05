@@ -101,93 +101,65 @@
             </div>
         </div>
 
-        <div class="row m-0 align-items-center">
-            <div id="checkboxes" class="col-12 p-3 d-flex flex-column gap-2 flex-md-row align-items-center justify-content-md-center col-md-9 col-lg-8">
+        <div class="row m-0 flex-column flex-md-row">
+            <div class="d-grid p-3 gap-1 col-12 col-md-6 mx-auto">
+                <button class="btn btn-primary " type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                    Filters
+                </button>
+                <div style="min-height:2vw;">
+                    <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                        <div class="card card-body" style="width: 300px;">
+                            <div id="checkboxes"
+                                class="col-12 p-3 d-flex flex-column  gap-2 align-items-start justify-content-md-center">
 
-                <!-- <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Categories
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li>
-                            <input class="form-check-input" type="checkbox" value="" id="categoria1">
-                            <label class="form-check-label" for="categoria1">
-                                Category 1
-                            </label>
-                        </li>
-                        <input class="form-check-input" type="checkbox" value="" id="categoria2">
-                        <label class="form-check-label" for="categoria2">
-                            Category 2
-                        </label>
-                        <li>
-                            <input class="form-check-input" type="checkbox" value="" id="categoria3">
-                            <label class="form-check-label" for="categoria3">
-                                Category 3
-                            </label>
-                        </li>
-
-                        <li>
-                            <input class="form-check-input" type="checkbox" value="" id="categoria4">
-                            <label class="form-check-label" for="categoria4">
-                                Category 4
-                            </label>
-                        </li>
-                        <input class="form-check-input" type="checkbox" value="" id="categoria5">
-                        <label class="form-check-label" for="categoria5">
-                            Category 5
-                        </label>
-                        <li>
-
-                        </li>
-
-                        <li>
-
-                        </li>
-                    </ul>
-                </div> -->
-
-                <!-- <div>
-                    <input class="form-check-input " type="checkbox" value="" id="categoria1">
-                    <label class="form-check-label" for="categoria1">
-                        Category 1
-                    </label>
+                                <!--   <div>
+                                    <input class="form-check-input " type="checkbox" value="" id="categoria1">
+                                    <label class="form-check-label" for="categoria1">
+                                        Category 1
+                                    </label>
+                                </div>
+                
+                                <div>
+                                    <input class="form-check-input" type="checkbox" value="" id="categoria2">
+                                    <label class="form-check-label" for="categoria2">
+                                        Category 2
+                                    </label>
+                                </div>
+                                <div>
+                                    <input class="form-check-input" type="checkbox" value="" id="categoria3">
+                                    <label class="form-check-label" for="categoria3">
+                                        Category 3
+                                    </label>
+                                </div>
+                                <div>
+                                    <input class="form-check-input" type="checkbox" value="" id="categoria4">
+                                    <label class="form-check-label" for="categoria4">
+                                        Category 4
+                                    </label>
+                                </div>
+                                <div>
+                                    <input class="form-check-input" type="checkbox" value="" id="categoria5">
+                                    <label class="form-check-label" for="categoria5">
+                                        Category 5
+                                    </label>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <div>
-                    <input class="form-check-input" type="checkbox" value="" id="categoria2">
-                    <label class="form-check-label" for="categoria2">
-                        Category 2
-                    </label>
-                </div>
-                <div>
-                    <input class="form-check-input" type="checkbox" value="" id="categoria3">
-                    <label class="form-check-label" for="categoria3">
-                        Category 3
-                    </label>
-                </div>
-                <div>
-                    <input class="form-check-input" type="checkbox" value="" id="categoria4">
-                    <label class="form-check-label" for="categoria4">
-                        Category 4
-                    </label>
-                </div>
-                <div>
-                    <input class="form-check-input" type="checkbox" value="" id="categoria5">
-                    <label class="form-check-label" for="categoria5">
-                        Category 5
-                    </label>
-                </div> -->
             </div>
-
-
-            <div class="col-12 px-3 col-md-3 col-lg-4">
-                <form class="d-flex" role="search">
-                    <input id="textoSearch" class="form-control" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+            <div class="col">
+                <div class="col-12 p-3">
+                    <form class="d-flex" role="search">
+                        <input id="textoSearch" class="form-control" type="search" placeholder="Search"
+                            aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
             </div>
         </div>
+
 
 
         <div class="row m-0">
