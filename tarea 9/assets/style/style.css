@@ -16,7 +16,12 @@ body{
     object-fit: cover;
 }
 
-h1{
+h1, h2{
     background-color: rgba(77, 77, 77, 0.658) !important;
+    
 }
 
+th,td {
+    text-align: center;
+    min-width: 8rem;
+}
