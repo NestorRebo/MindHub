@@ -22,17 +22,21 @@ function getData(url) {
       if (document.title == "Details") {
         pintadoDetails(eventosInternet)
       }
-      if (document.title == "Amazing Events") {
+      if (document.title == "Amazing Events"|| document.title == "Past Events"||document.title == "Upcoming Events") {
         funcionesParaPintar(eventosInternet, fechaInternet)
       }
       if (document.title == "Stats") {
-        upcomingEventStatistics(eventosInternet)
+
         let arrayYaCalculado = eventStatistics(eventosInternet)
         pintarTabla(arrayYaCalculado)
 
+        let arrayEstimate = upcomingEventStatistics(eventosInternet)
+        let arrayAssitance = pastEventStatistics(eventosInternet)
+        console.log(arrayEstimate)
+        console.log(arrayAssitance)
 
-
-
+        pintarUpcoming(arrayEstimate)
+        pintarPast(arrayAssitance)
       }
     })
     .catch(error => console.log(error))
@@ -132,6 +136,7 @@ const formulario = document.forms[0]
 function filtrarPorTexto(arrayDeObjetos, texto) {
   let idElementoFiltrado
   let arrayProp = arrayDeObjetos.map((e) => (Object.values(e)))
+
 
   let arrayStrings = arrayProp.map(array => array.map(string => (string.toString())))
   let elementosFiltrados = arrayStrings.filter(array => array.some(string => string.toLowerCase().includes(texto.toLowerCase())))
@@ -281,9 +286,9 @@ function pintarDetails(elementoAMostrar) {
 
   cardHTML = `
 <div class="col-md-10 col-lg-6 ">
-  <img src="${elementoAMostrar.image}" class="img-fluid rounded-start col-12"   alt="...">
+  <img src="${elementoAMostrar.image}" class=" rounded-start col-12 p-3"  alt="...">
 </div>
-<div class="col-lg-6 ">
+<div class="conteiner-fluid col-lg-6 ">
   <div class="card-body">
   <h5 class="card-title">${elementoAMostrar.name}</h5>
   <table class="table">
@@ -403,7 +408,7 @@ function pintarTabla(arrysDeObjetos) {
 
   tableHTML = `
             <table class="table caption-top">
-                <caption class="text-center">Event Statistics</caption>
+                <caption class="text-center display-6">Event Statistics</caption>
                 <thead>
                     <tr class="text-center">
                         <th scope="col">Events whit highest % of assistance</th>
@@ -428,9 +433,37 @@ function pintarTabla(arrysDeObjetos) {
 
 
 function upcomingEventStatistics(arrayDeObjetos) {
+  /*   arrayDeEstimate.map(e => {
+  
+  
+      if (categoria.includes(e.category)) {
+        sumaGanancia += e.estimate * e.price
+        porcentajedeattendance += (e.estimate * 100) / e.capacity
+        sumasPorCategoria1 = ({ categoria: e.category, Ganancia: parseInt(sumaGanancia), porcentajedeattendance: parseInt(porcentajedeattendance) })
+        
+        console.log(sumasPorCategoria1)
+  
+        if (sumasPorCategoria.includes(e.category)) {
+          let indiceDeObjeto = sumasPorCategoria.findIndex(g => g.category === sumasPorCategoria1.categoria)
+        
+        
+          if (indiceDeObjeto !== -1) {
+            sumasPorCategoria[indiceDeObjeto] = sumasPorCategoria1
+          } else {
+            sumasPorCategoria.push(sumasPorCategoria1)
+          }
+        }
+      } 
+      let matrizFiltrada = arrayDeEstimate.filter(objeto => categoria.includes(objeto.category));
+      console.log(matrizFiltrada)
+    }) */
+
+
+
   let arrayDeAssitance = [];
   let arrayDeEstimate = [];
-
+  let arrayDeObjetosEstimate = [{}];
+  let arrayDeObjetosAssitance = [{}];
   // console.log(arrayDeObjetos)
 
   arrayDeObjetos.forEach(objeto => {
@@ -441,49 +474,117 @@ function upcomingEventStatistics(arrayDeObjetos) {
     }
   })
 
-  console.log(arrayDeEstimate)
-  // console.log(arrayDeAssitance)
-
-  let sumasPorCategoria = [{}];
-  let categoria = []
 
 
-  arrayDeEstimate.map(objeto => {
-    if (!categoria.includes(objeto.category)) {
-      categoria.push(objeto.category)
+  let categorias = [...new Set(arrayDeEstimate.map(elemento => elemento.category))]
+  datosTabla2 = categorias.map(categoria => {
+
+    //array etimate
+    let eventosDeEstaCategoria = arrayDeEstimate.filter(evento => evento.category == categoria)
+    let porcentagesDeEstimate = eventosDeEstaCategoria.map(elemento => (elemento.estimate * 100) / elemento.capacity)
+    let promedioFinalDeEstimate = porcentagesDeEstimate.reduce((acc, valor) => acc + valor, 0) / porcentagesDeEstimate.length
+
+    // falta codigo que genere las demas propiedades
+    let sumaDeGananciasEstimate = eventosDeEstaCategoria.map(elemento => (elemento.estimate * elemento.price))
+    let totalDeIngresosEstimate = sumaDeGananciasEstimate.reduce((acc, valor) => (acc + valor), 0)
+
+    let nuevoElementoFilaEstimate = {
+      categoria: categoria,
+      porcentagesDeEstimate: promedioFinalDeEstimate,
+      totalDeIngresos: totalDeIngresosEstimate,
+
+    }
+
+    arrayDeObjetosEstimate.push(nuevoElementoFilaEstimate)
+    // console.log(nuevoElementoFilaEstimate)
+
+    return arrayDeObjetosEstimate
+  })
+
+  arrayDeObjetosEstimate.shift()
+
+  return arrayDeObjetosEstimate
+
+}
+
+
+function pastEventStatistics(arrayDeObjetos) {
+
+  let arrayDeAssitance = [];
+  let arrayDeEstimate = [];
+
+  let arrayDeObjetosAssitance = [{}];
+  // console.log(arrayDeObjetos)
+
+  arrayDeObjetos.forEach(objeto => {
+    if (isNaN(objeto.assistance)) {
+      arrayDeEstimate.push(objeto)
+    } else {
+      arrayDeAssitance.push(objeto)
     }
   })
 
+  let categorias = [...new Set(arrayDeEstimate.map(elemento => elemento.category))]
+  datosTabla2 = categorias.map(categoria => {
+    //arrray Assitance
+
+    let eventosDeEstaCategoria1 = arrayDeAssitance.filter(evento => evento.category == categoria)
+
+    let porcentagesDeAsistencia = eventosDeEstaCategoria1.map(elemento => (elemento.assistance * 100) / elemento.capacity)
+    let promedioFinalDeAsistencia = porcentagesDeAsistencia.reduce((acc, valor) => acc + valor, 0) / porcentagesDeAsistencia.length
+
+    // falta codigo que genere las demas propiedades
+    let sumaDeGananciasAssistance = eventosDeEstaCategoria1.map(elemento => (elemento.assistance * elemento.price))
+    let totalDeIngresosAssitance = sumaDeGananciasAssistance.reduce((acc, valor) => (acc + valor), 0)
+
+    let nuevoElementoFilaAssistance = {
+      categoria: categoria,
+      porcentageDeAsistencia: promedioFinalDeAsistencia,
+      totalDeIngresos: totalDeIngresosAssitance,
+
+    }
+
+    arrayDeObjetosAssitance.push(nuevoElementoFilaAssistance)
+
+    return arrayDeObjetosAssitance
 
 
+  })
 
-  console.log(categoria)
+  arrayDeObjetosAssitance.splice(0, 1)
 
-/*   arrayDeEstimate.map(e => {
+  return arrayDeObjetosAssitance
+}
 
 
-    if (categoria.includes(e.category)) {
-      sumaGanancia += e.estimate * e.price
-      porcentajedeattendance += (e.estimate * 100) / e.capacity
-      sumasPorCategoria1 = ({ categoria: e.category, Ganancia: parseInt(sumaGanancia), porcentajedeattendance: parseInt(porcentajedeattendance) })
-      
-      console.log(sumasPorCategoria1)
+function pintarUpcoming(arrayDeObjetosEstimate) {
 
-      if (sumasPorCategoria.includes(e.category)) {
-        let indiceDeObjeto = sumasPorCategoria.findIndex(g => g.category === sumasPorCategoria1.categoria)
-      
-      
-        if (indiceDeObjeto !== -1) {
-          sumasPorCategoria[indiceDeObjeto] = sumasPorCategoria1
-        } else {
-          sumasPorCategoria.push(sumasPorCategoria1)
-        }
-      }
-    } 
-  }) */
+  let html = ''
+
+  arrayDeObjetosEstimate.sort((a, b) => b.porcentagesDeEstimate - a.porcentagesDeEstimate)
+  arrayDeObjetosEstimate.map(fila =>
+    html += `<tr>
+    <td>${fila.categoria}</td>
+    <td>$${(fila.totalDeIngresos).toLocaleString()}</td>
+    <td>$${(fila.porcentagesDeEstimate).toFixed(2)}%</td>
+    
+    </tr>`
+  )
+  tablaUpcoming.innerHTML = html
+}
+
+function pintarPast(arrayDeObjetosAssitance) {
+
+  let html = ''
+
+  arrayDeObjetosAssitance.sort((a, b) => b.porcentageDeAsistencia - a.porcentageDeAsistencia)
+  arrayDeObjetosAssitance.map(fila =>
   
-  let matrizFiltrada = arrayDeEstimate.filter(objeto => categoria.includes(objeto.category));
-  
-  
-  console.log(matrizFiltrada)
+  html += `<tr>
+    <td>${fila.categoria}</td>
+    <td>$${(fila.totalDeIngresos).toLocaleString()}</td>
+    <td>${(fila.porcentageDeAsistencia).toFixed(2)}%</td>
+    </tr>` 
+  )
+  tablaPast.innerHTML = html
 }
