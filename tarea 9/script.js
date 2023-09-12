@@ -11,9 +11,9 @@ function getData(url) {
   fetch(url)
     .then(respuestaDelServidor => respuestaDelServidor.json())
     .then(datosDeInternet => {
-      // console.log(datosDeInternet)
+      //  console.log(datosDeInternet)
       eventosInternet = datosDeInternet.events
-      // console.log(eventosInternet)
+      console.log(eventosInternet)
       fechaInternet = datosDeInternet.currentDate
       // console.log(fechaInternet)
 
@@ -52,13 +52,13 @@ function generarTarjetasAmazing(dataEventos, ubic) {
 
     cardsHTML +=
       `<div class="card" style="width: 16rem;">
-      <img src="${evento.image}" class="card-img-top" style="height: 10rem;" alt="${evento.name}">
+      <img src="${evento.image}" class="card-img-top object-fit-cover" style="height: 10rem;" alt="${evento.name}">
       <div class="card-body">
         <h5 class="card-title">${evento.name}</h5>
-        <p class="card-text" style="height: 5rem;">${evento.description}</p>
+        <p class="card-text" style="height: 6.5rem;">${evento.description}</p>
         <div class="d-flex justify-content-between align-items-center">
           <h6>$  ${evento.price}</h6>
-          <a href="./assets/pages/details.html?id= ${evento._id}" class="btn btn-primary">Details</a>
+          <a href="./assets/pages/details.html?id= ${evento._id}" class="rounded-pill border-dark-subtle btn btn-secondary">Details</a>
         </div>
       </div>
     </div>`
@@ -76,10 +76,10 @@ function generarTarjetas(dataEventos, ubic) {
       <img src="${evento.image}" class="card-img-top object-fit-cover" style="height: 10rem;" alt="${evento.name}">
       <div class="card-body">
         <h5 class="card-title">${evento.name}</h5>
-        <p class="card-text" style="height: 5rem;">${evento.description}</p>
+        <p class="card-text" style="height: 6.5rem;">${evento.description}</p>
         <div class="d-flex justify-content-between align-items-center">
           <h6>$  ${evento.price}</h6>
-          <a href="./details.html?id= ${evento._id}" class="btn btn-primary">Details</a>
+          <a href="./details.html?id= ${evento._id}" class="rounded-pill border btn btn-secondary">Details</a>
         </div>
       </div>
     </div>`
@@ -265,13 +265,17 @@ function pintadoDetails(arrayDeObjetos) {
   // console.log(queryString)
   const param = new URLSearchParams(queryString);
   // console.log(param);
-  const id = param.get("id");
-  const idplus = id.trim()
-  // console.log(idplus)
+  const id = param.get("id").trimEnd();
+  console.log(id)
 
-  let elementoFiltrado = arrayDeObjetos.filter(obj => Object.values(obj).some(value => value == idplus))
+
+  let elementoFiltrado = arrayDeObjetos.filter(obj =>
+    // console.log(obj)
+    obj._id == id)
+  // Object.values(obj).some(value => value == id)) ojo con esta ecuacion quedaba raro con el concierto de metallica
+
   let elementoFiltrado1 = elementoFiltrado[0]
-  // console.log(elementoFiltrado1)
+  console.log(elementoFiltrado)
   pintarDetails(elementoFiltrado1)
 }
 
@@ -402,32 +406,18 @@ function pintarTabla(arrysDeObjetos) {
   let obDePorcentajeDeMenorAsistencia = arrysDeObjetos[1]
   let objyDePorcentajeDeMayorCapacidad = arrysDeObjetos[2];
 
-
+  console.log(objDePorcentajeDeMayorAsistencia)
 
   let tableHTML
 
   tableHTML = `
-            <table class="table caption-top">
-                <caption class="text-center display-6">Event Statistics</caption>
-                <thead>
                     <tr class="text-center">
-                        <th scope="col">Events whit highest % of assistance</th>
-                        <th scope="col">Events whit lowest % of assistance</th>
-                        <th scope="col">Events whit larger capacity</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="text-center">
-                        <td>${objDePorcentajeDeMayorAsistencia.nombre}</td>
-                        <td>${obDePorcentajeDeMenorAsistencia.nombre}</td>
-                        <td>${objyDePorcentajeDeMayorCapacidad.nombre}</td>
-                    </tr>
-                </tbody>
-            </table>`
+                        <td><a href="./details.html?id=${objDePorcentajeDeMayorAsistencia.id}" class="rounded-pill border btn btn-outline-secondary">${objDePorcentajeDeMayorAsistencia.nombre}</a></td>
+                        <td><a href="./details.html?id=${obDePorcentajeDeMenorAsistencia.id}" class="rounded-pill border btn btn-outline-secondary">${obDePorcentajeDeMenorAsistencia.nombre}</a></td>
+                        <td><a href="./details.html?id=${objyDePorcentajeDeMayorCapacidad.id}" class="rounded-pill border btn btn-outline-secondary">${objyDePorcentajeDeMayorCapacidad.nombre}</a></td>
+                    </tr>`
 
   tabla.innerHTML = tableHTML
-
-
 }
 
 
@@ -463,7 +453,6 @@ function upcomingEventStatistics(arrayDeObjetos) {
   let arrayDeAssitance = [];
   let arrayDeEstimate = [];
   let arrayDeObjetosEstimate = [{}];
-  let arrayDeObjetosAssitance = [{}];
   // console.log(arrayDeObjetos)
 
   arrayDeObjetos.forEach(objeto => {
@@ -566,7 +555,7 @@ function pintarUpcoming(arrayDeObjetosEstimate) {
     html += `<tr>
     <td>${fila.categoria}</td>
     <td>$${(fila.totalDeIngresos).toLocaleString()}</td>
-    <td>$${(fila.porcentagesDeEstimate).toFixed(2)}%</td>
+    <td>${(fila.porcentagesDeEstimate).toFixed(2)}%</td>
     
     </tr>`
   )

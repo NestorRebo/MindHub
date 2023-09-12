@@ -24,22 +24,22 @@
                 </button>
 
                 <div class="collapse navbar-collapse text-end p-2 justify-content-end" id="navbarSupportedContent">
-                    <ul class="navbar-nav  mb-2 mb-lg-0 text-end">
+                    <ul class="nav nav-tabs mb-2 mb-lg-0 text-end bg-dark-subtle">
 
                         <li>
-                            <a class="nav-link" href="../../index.html">Home</a>
+                            <a class="nav-link text-dark" href="../../index.html">Home</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="../pages/upcomingEvents.html">Upcoming Events</a>
+                            <a class="nav-link text-dark" href="../pages/upcomingEvents.html">Upcoming Events</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="../pages/pastEvents.html">Past Events</a>
+                            <a class="nav-link text-dark" href="../pages/pastEvents.html">Past Events</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="../pages/contact.html">Contact</a>
+                            <a class="nav-link text-dark" href="../pages/contact.html">Contact</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="../pages/stats.html">Stats</a>
+                            <a class="nav-link text-dark active bg-secondary text-white" href="../pages/stats.html">Stats</a>
                         </li>
                     </ul>
                 </div>
@@ -49,7 +49,7 @@
 
     <main class="row m-0">
 
-        <div class="row m-0">
+        <section class="row m-0 p-3">
             <div id="carouselExampleSlidesOnly" class="col-12 slide " data-bs-ride="carousel">
 
                 <div class="carousel-inner">
@@ -71,16 +71,33 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="table-responsive">
-            <div class="p-4" id="tabla">
+        <section class="row m-0 justify-content-around">
+
+            <div class="table-responsive col-lg-10 col-12 col-xl-9">
+                    <table class="table caption-top">
+                        <caption class="text-center display-6">Event Statistics</caption>
+                        <thead>
+                            <tr class="text-center">
+                                <th scope="col">Events whit highest % of assistance</th>
+                                <th scope="col">Events whit lowest % of assistance</th>
+                                <th scope="col">Events whit larger capacity</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla">
+                            <tr class="text-center">
+                                <td><a href="./details.html?id= ${objDePorcentajeDeMayorAsistencia.id}" class="btn btn-primary">${objDePorcentajeDeMayorAsistencia.nombre}</a></td>
+                                <td><a href="./details.html?id= ${obDePorcentajeDeMenorAsistencia.id}" class="btn btn-primary">${obDePorcentajeDeMenorAsistencia.nombre}</a></td>
+                                <td><a href="./details.html?id= ${objyDePorcentajeDeMayorCapacidad.id}" class="btn btn-primary">${objyDePorcentajeDeMayorCapacidad.nombre}</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
             </div>
-        </div>
 
-        <div class="table-responsive">
-            <div class="p-4">
-                <table class="table caption-top text-center">
+
+            <section class="table-responsive col-lg-10 col-12 col-xl-9">
+                <table class="table caption-top text-center align-items-center">
                     <caption class="text-center display-6">Upcoming events statistics by category</caption>
                     <thead>
                         <tr>
@@ -96,12 +113,10 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
+            </section>
 
-        </div>
 
-        <div class="table-responsive">
-            <div class="p-4">
+            <div class="table-responsive col-lg-10 col-12 col-xl-9 ">
                 <table class="table caption-top text-center">
                     <caption class="text-center display-6">Past events statistics by category</caption>
                     <thead>
@@ -120,7 +135,10 @@
                     </tbody>
                 </table>
             </div>
-        </div>
+
+        </section>
+
+
 
 
 
@@ -131,17 +149,17 @@
 
         <div class="col-12 d-flex justify-content-center col-md-10 justify-content-md-start ">
 
-            <button class="btn" type="button">
+            <button class="btn rounded border-secondary" type="button">
                 <img src="../images/whatsapp.png" alt="Whatsapp" height="30">
                 <p>Whatsapp</p>
             </button>
 
-            <button class="btn" type="button">
+            <button class="btn rounded border-secondary" type="button">
                 <img src="../images/facebook.png" alt="facebook" height="30">
                 <p>Facebook</p>
             </button>
 
-            <button class="btn" type="button">
+            <button class="btn rounded border-secondary" type="button">
                 <img src="../images/instagram.png" alt="instagram" height="30">
                 <p>Instagram</p>
             </button>

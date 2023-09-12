@@ -25,22 +25,22 @@
                     </button>
 
                     <div class="collapse navbar-collapse text-end p-2 justify-content-end" id="navbarSupportedContent">
-                        <ul class="navbar-nav  mb-2 mb-lg-0 text-end">
+                        <ul class="nav nav-tabs mb-2 mb-lg-0 text-end bg-dark-subtle">
 
                             <li>
-                                <a class="nav-link" href="../../index.html">Home</a>
+                                <a class="nav-link text-dark" href="../../index.html">Home</a>
                             </li>
                             <li>
-                                <a class="nav-link" href="../pages/upcomingEvents.html">Upcoming Events</a>
+                                <a class="nav-link text-dark active bg-secondary text-white" href="../pages/upcomingEvents.html">Upcoming Events</a>
                             </li>
                             <li>
-                                <a class="nav-link" href="../pages/pastEvents.html">Past Events</a>
+                                <a class="nav-link text-dark" href="../pages/pastEvents.html">Past Events</a>
                             </li>
                             <li>
-                                <a class="nav-link" href="../pages/contact.html">Contact</a>
+                                <a class="nav-link text-dark" href="../pages/contact.html">Contact</a>
                             </li>
                             <li>
-                                <a class="nav-link" href="../pages/stats.html">Stats</a>
+                                <a class="nav-link text-dark" href="../pages/stats.html">Stats</a>
                             </li>
                         </ul>
                     </div>
@@ -48,7 +48,7 @@
             </nav>
     </header>
 
-    <main>
+    <main class="row m-0 justify-content-center">
         <div class="row m-0">
             <div id="carouselExampleSlidesOnly" class="col-12 slide " data-bs-ride="carousel">
                 
@@ -74,10 +74,11 @@
             </div>
         </div>
 
-        <div class="row m-0 flex-column flex-md-row">
+        <section class="row flex-column flex-md-row">
             <div class="d-grid p-3 gap-1 col-12 col-md-6 mx-auto">
-                <button class="btn btn-primary " type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                <button class="btn rounded-pill border-dark-subtle btn btn-secondary" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false"
+                    aria-controls="collapseWidthExample">
                     Filters
                 </button>
                 <div style="min-height:2vw;">
@@ -85,21 +86,23 @@
                         <div class="card card-body" style="width: 300px;">
                             <div id="checkboxes"
                                 class="col-12 p-3 d-flex flex-column  gap-2 align-items-start justify-content-md-center">
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col">
-                <div class="col-12 p-3">
+                <div class="p-3">
                     <form class="d-flex" role="search">
                         <input id="textoSearch" class="form-control" type="search" placeholder="Search"
                             aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <button class="btn rounded-pill border-dark-subtle btn btn-secondary"
+                            type="submit">Search</button>
                     </form>
                 </div>
             </div>
-        </div>
+        </section>
 
 
 
@@ -117,17 +120,17 @@
 
         <div class="col-12 d-flex justify-content-center col-md-10 justify-content-md-start">
 
-            <button class="btn" type="button">
+            <button class="btn rounded border-secondary" type="button">
                 <img src="../images/whatsapp.png" alt="Whatsapp" height="30">
                 <p>Whatsapp</p>
             </button>
 
-            <button class="btn" type="button">
+            <button class="btn rounded border-secondary" type="button">
                 <img src="../images/facebook.png" alt="facebook" height="30">
                 <p>Facebook</p>
             </button>
 
-            <button class="btn" type="button">
+            <button class="btn rounded border-secondary" type="button">
                 <img src="../images/instagram.png" alt="instagram" height="30">
                 <p>Instagram</p>
             </button>
