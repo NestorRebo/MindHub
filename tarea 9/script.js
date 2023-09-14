@@ -13,7 +13,7 @@ function getData(url) {
     .then(datosDeInternet => {
       //  console.log(datosDeInternet)
       eventosInternet = datosDeInternet.events
-      console.log(eventosInternet)
+      // console.log(eventosInternet)
       fechaInternet = datosDeInternet.currentDate
       // console.log(fechaInternet)
 
@@ -22,7 +22,7 @@ function getData(url) {
       if (document.title == "Details") {
         pintadoDetails(eventosInternet)
       }
-      if (document.title == "Amazing Events"|| document.title == "Past Events"||document.title == "Upcoming Events") {
+      if (document.title == "Amazing Events" || document.title == "Past Events" || document.title == "Upcoming Events") {
         funcionesParaPintar(eventosInternet, fechaInternet)
       }
       if (document.title == "Stats") {
@@ -38,7 +38,9 @@ function getData(url) {
         pintarUpcoming(arrayEstimate)
         pintarPast(arrayAssitance)
       }
-    })
+      filtrarPorCheck(eventosInternet)
+    }
+    )
     .catch(error => console.log(error))
 }
 
@@ -92,7 +94,7 @@ function generarTarjetas(dataEventos, ubic) {
 
 function impresionDeCards(elementosFiltrados, fechaActual) {
 
-
+// console.log(elementosFiltrados)
 
 
   let dataEventosNext = elementosFiltrados.filter(e => e.date > fechaActual)
@@ -160,15 +162,10 @@ function crearCheckboxes(arrayDeObjetos, ubicacion) {
   let checksHTML = "";
   let keysUnicas = [];
   /* vamos buscar los nombres de los checkbox del amazing event.js */
-  arrayDeObjetos.forEach(e => Object.keys(e).forEach(key => {
-    if (!keysUnicas.includes(key)) {
-      keysUnicas.push(key)
-    }
-  }))
 
-  let titulosCheckbox1 = keysUnicas.filter(e => !e.includes('_') && !e.includes('date') && !e.includes('image'))
+  keysUnicas = [...new Set(arrayDeObjetos.map(elemento => elemento.category))]
 
-  for (e of titulosCheckbox1) {
+  for (e of keysUnicas) {
     checksHTML +=
       `<div>
       <input class="form-check-input " type="checkbox" value="" id="${e}">
@@ -194,26 +191,17 @@ function advertencia() {
 }
 
 function filtroCruzado(arrayDeObjetos, fechaActual) {
-  let filtradoPorTexto = filtrarPorTexto(arrayDeObjetos, inputTexto.value)
-  let filtrarPorTextoYPorCheckers = filtrarPorCheck(filtradoPorTexto)
-
+  let filtrarPorCheckers = filtrarPorCheck(arrayDeObjetos)
+  // console.log(filtrarPorCheckers)
+  let filtrarPorTextoYPorCheckers = filtrarPorTexto(filtrarPorCheckers, inputTexto.value)
   impresionDeCards(filtrarPorTextoYPorCheckers, fechaActual)
 
 }
 
-
-/* detectamos si hubo un cambio en los checkboxes */
-
-// checkboxes.addEventListener("change", () => {
-// //  console.log("cambio un checkbox")
-//   //  let arregloFiltradoPorCheck = filtrarPorCheck(dataEventos)
-// //   impresionDeCards(arregloFiltradoPorCheck) 
-//   filtroCruzado()
-// })
-
-
-
 function filtrarPorCheck(arrayDeObjetos) {
+  let elementosFiltradosporcheck = [{}]
+
+
   let checkboxes = document.querySelectorAll("#checkboxes .form-check-input")
   // console.log(checkboxes)
   let arrayCheckboxes = Array.from(checkboxes)
@@ -223,8 +211,13 @@ function filtrarPorCheck(arrayDeObjetos) {
   let stringCheck = checked.map(check => check.id)
   // console.log(stringCheck)
 
-  let elementosFiltradosporcheck = arrayDeObjetos.filter(obj => Object.keys(obj).some(key => stringCheck.includes(key)))
-  // console.log(elementosFiltrados)
+  stringCheck.map(categoria => arrayDeObjetos.filter(evento => {
+    if (categoria.includes(evento.category)) {
+      elementosFiltradosporcheck.push(evento)
+    }
+
+  }))
+  // console.log(elementosFiltradosporcheck.splice(0,1))
 
   if (stringCheck.length == 0) {
     return arrayDeObjetos
@@ -470,6 +463,7 @@ function upcomingEventStatistics(arrayDeObjetos) {
 
     //array etimate
     let eventosDeEstaCategoria = arrayDeEstimate.filter(evento => evento.category == categoria)
+
     let porcentagesDeEstimate = eventosDeEstaCategoria.map(elemento => (elemento.estimate * 100) / elemento.capacity)
     let promedioFinalDeEstimate = porcentagesDeEstimate.reduce((acc, valor) => acc + valor, 0) / porcentagesDeEstimate.length
 
@@ -568,12 +562,12 @@ function pintarPast(arrayDeObjetosAssitance) {
 
   arrayDeObjetosAssitance.sort((a, b) => b.porcentageDeAsistencia - a.porcentageDeAsistencia)
   arrayDeObjetosAssitance.map(fila =>
-  
-  html += `<tr>
+
+    html += `<tr>
     <td>${fila.categoria}</td>
     <td>$${(fila.totalDeIngresos).toLocaleString()}</td>
     <td>${(fila.porcentageDeAsistencia).toFixed(2)}%</td>
-    </tr>` 
+    </tr>`
   )
   tablaPast.innerHTML = html
 }
